@@ -2,11 +2,11 @@
 
 <section class="py-4 py-md-3 bg-light">
 	<div class="container">
-		<div class="d-flex align-items-center">
+		<div class="row align-items-center">
 			<div class="col-md-6 col-12 text-center text-md-start">
 				<h1 class="fw-bold text-dark fs-1">Zambia's most creative online education platform</h1>
 				<p class="my-3 h5 text-secondary d-none d-md-block">The online learning platform based on the Zambian secondary school syllabus.</p>
-				<button type="button" class="btn btn-primary text-white fw-bold d-none d-md-inline-block mt-3 fs-5 px-md-4 py-md-2" data-bs-toggle="modal" data-bs-target="#modalSignUp">Get started</button>
+				<button type="button" class="btn btn-primary text-white fw-bold d-none d-md-inline-block mt-3 fs-5 px-md-4 py-md-2" data-bs-toggle="modal" data-bs-target="#modalLogin">Get started</button>
 				<a href="{{ route('register') }}" class="btn btn-primary d-md-none text-white mt-3">Get started</a>
 			</div>
 			<div class="col-md-6 d-md-block d-none">
