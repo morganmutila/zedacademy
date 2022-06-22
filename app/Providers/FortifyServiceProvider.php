@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Fortify;
+use Illuminate\Validation\ValidationException;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -37,11 +38,26 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         Fortify::registerView(function () {
-            return view('auth.register');
+            return view('auth.signup');
         });
 
         Fortify::loginView(function () {
             return view('auth.login');
+        });
+
+        Fortify::authenticateUsing(function (Request $request) {
+            $user = User::where('email', $request->username)
+            ->orWhere('username', $request->username)->first();
+
+            if ($user &&
+                Hash::check($request->password, $user->password)) {
+                return $user;
+            }
+            else{
+                throw ValidationException::withMessages([
+                    'username' => 'We cant’t find an account matching the username and password you entered. Please check your username and password and try again'
+                ]);
+            }
         });
 
         Fortify::requestPasswordResetLinkView(function () {
@@ -52,13 +68,12 @@ class FortifyServiceProvider extends ServiceProvider
             return view('auth.reset-password', ['request' => $request]);
         });
 
-        // Fortify::verifyEmailView(function () {
-        //     return view('auth.verify-email');
-        // });
+        Fortify::verifyEmailView(function () {
+            return view('auth.verify-email');
+        });
 
         Fortify::confirmPasswordView(function () {
             return view('auth.password-confirm');
         });
-
     }
 }

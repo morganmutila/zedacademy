@@ -1,18 +1,11 @@
-// MY THEME COLORS 
-$purple:  #BB6EF5;
-$pink:    #ea4c89;
+//@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+// Color system
+
+$primary: #1cb35d; //#00ff84; //#31D8A7;
+$secondary: #b0ce34; //#006062;
 
 
-$primary:       $pink;
-$secondary:     $purple;
-
-
-// Typography
-$font-family-sans-serif: 'Rubik', Montserrat, sans-serif;
-$font-size-base: 0.9rem;
-$line-height-base: 1.6;
-
-
-// Body
-$body-color: #000;
-
+$font-family-sans-serif:   "Lato";
+$enable-validation-icons:     false;
+$enable-negative-margins:     false;

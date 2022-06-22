@@ -1,15 +1,18 @@
 //@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
 
 
-// 1. Custom variable overrides here
+// 1. Include remainder of required Bootstrap stylesheets
+@import "~bootstrap/scss/functions";
+
+// 2. Custom variable overrides here
 @import 'variables';
 
-// 2. Include remainder of required Bootstrap stylesheets
-@import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/root";
+
 
 // 3. Include any optional Bootstrap CSS as needed
 @import "~bootstrap/scss/reboot";
@@ -33,18 +36,25 @@
 @import "~bootstrap/scss/alert";
 // @import "~bootstrap/scss/progress";
 // @import "~bootstrap/scss/list-group";
-// @import "~bootstrap/scss/close";
-// @import "~bootstrap/scss/toasts";
-// @import "~bootstrap/scss/modal";
+@import "~bootstrap/scss/close";
+@import "~bootstrap/scss/toasts";
+@import "~bootstrap/scss/modal";
 // @import "~bootstrap/scss/tooltip";
 // @import "~bootstrap/scss/popover";
 // @import "~bootstrap/scss/carousel";
 // @import "~bootstrap/scss/spinners";
-// @import "~bootstrap/scss/offcanvas";
+@import "~bootstrap/scss/offcanvas";
 @import "~bootstrap/scss/helpers";
 
 // 4. Optionally include utilities API last to generate classes based on the Sass map in `_utililies.scss`
 @import "~bootstrap/scss/utilities/api";
 
 // 5. Add additional custom code here
+@import "navigation";
 @import "custom";
+
+
+
+
+
+
