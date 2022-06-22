@@ -4,11 +4,23 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <a class="navbar-brand d-flex align-items-center p-0 m-0" href="{{ route('home') }}">
-          <x-logo-alt/>
+        <!--Desktop device logo--->
+        <a class="navbar-brand d-none d-md-flex align-items-center p-0 m-0" href="{{ route('home') }}">
+          <x-logo/>
         </a>
 
-        <a class="d-md-none btn btn-outline-primary" href="{{ route('login') }}">Sign in</a>
+        <!--Mobile device logo--->
+        <a class="navbar-brand d-flex align-items-center p-0 m-0 d-md-none" href="{{ route('home') }}">
+          <x-logo-alt height="40px" width="40px"/>
+        </a>
+
+        @if(Auth::check())
+            <a href="{{ route('profile.edit') }}" class="me-2">
+            <img src="https://i.pravatar.cc/32?u={{ Auth::user()->id }}" height="35px" width="35px"/ alt="{{ Auth::user()->name }}" class="rounded-circle"></a>
+        @else
+            <a class="d-md-none btn btn-outline-primary" href="{{ route('login') }}">Sign in</a>
+
+        @endif
 
         <!--Menu for desktop devices-->
         <ul class="menu navbar-nav flex-row-md flex-wrap align-items-center flex-grow-1 ms-md-5 d-none d-md-flex">
@@ -134,27 +146,27 @@
             <div class="offcanvas-body p-5 pt-0 p-md-0 align-items-center">
                 <ul class="menu navbar-nav fs-3">
                     <li class="nav-item">
-                        <a class="nav-link{{ route('browse') }}" href="#">Browse</a>   
+                        <a class="nav-link link-dark" href="{{ route('browse') }}">Browse</a>   
                     </li>
                
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Sign in</a>
+                            <a class="nav-link link-dark" href="{{ route('login') }}">Sign in</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Sign up</a>
+                            <a class="nav-link link-dark" href="{{ route('register') }}">Sign up</a>
                         </li>
                     @endguest
 
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="#">{{ Auth::user()->name }}</a>
+                            <a class="nav-link link-dark" href="#">{{ Auth::user()->name }}</a>
                         </li>
                         <li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-link text-dark text-decoration-none p-0">Sign Out</button>
+                                <button type="submit" class="btn btn-link fs-3 link-dark text-decoration-none p-0">Sign Out</button>
                             </form>
                         </li>
                     @endauth
