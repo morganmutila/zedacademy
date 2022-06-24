@@ -1,11 +1,11 @@
 <div>
     <!-- Modal -->
-    <div wire:ignore.self class="modal fade" id="modalSignUp" tabindex="-1">
+    <div wire:ignore.self class="modal modal animate__animated animate__fast   animate__zoomIn" id="modalSignUp" data-bs-backdrop="static" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" style="width: 430px;">
             <div class="modal-content rounded">
-                <div class="modal-body">
-                    <button type="button" class="btn-close float-end small" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <main class="d-flex align-items-center p-4 pb-0 justify-content-center flex-column"> 
+                <div class="modal-body d-flex flex-column">
+                    <button type="button" class="btn-close align-self-end small" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <main class="d-flex align-items-center px-4 justify-content-center flex-column"> 
                         
                         <x-logo-alt/>
                         <h1 class="fs-3 fw-bold mt-md-4 mb-md-5">Sign up to {{ config('app.name') }}</h1>  
@@ -15,23 +15,23 @@
 
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <input wire:model.defer="form.name" id="name" name="name" type="text" class="form-control bg-light rounded-lg @error('name') is-invalid @enderror>" autocomplete="name" placeholder="Name" value="{{ old('name') }}">
+                                    <input wire:model.defer="form.name" id="name" name="name" type="text" class="form-control bg-light @error('name') is-invalid @enderror>" autocomplete="name" placeholder="Name" value="{{ old('name') }}">
                                     @error('name')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                                 </div>
                                 <div class="col-md-6 ps-md-0 mt-3 mt-md-0">
-                                    <input wire:model.defer="form.username" id="username" placeholder="Username" name="username" type="text" class="form-control bg-light rounded-lg  @error('username') is-invalid @enderror>" value="{{ old('username') }}">
+                                    <input wire:model.defer="form.username" id="username" placeholder="Username" name="username" type="text" class="form-control bg-light  @error('username') is-invalid @enderror>" value="{{ old('username') }}">
                                     @error('username')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                                 </div>
                             </div>
                             
                             <div class="mb-3">
-                                <input wire:model.defer="form.email"  id="email" name="email" placeholder="Email" type="email" class="form-control bg-light rounded-lg @error('email') is-invalid @enderror>" autocomplete="email" value="{{ old('email') }}">
+                                <input wire:model.defer="form.email"  id="email" name="email" placeholder="Email" type="email" class="form-control bg-light @error('email') is-invalid @enderror>" autocomplete="email" value="{{ old('email') }}">
                                 @error('email')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                             </div>
 
                             <div class="mb-3 position-relative">
                                 <span class="position-absolute fw-bold small text-accent togglePassword" style="right: 4%; top: 20%;cursor: pointer;">Show</span>
-                                <input  wire:model.defer="form.password"  id="password" type="password" placeholder="Password" class="form-control bg-light rounded-lg @error('password') is-invalid @enderror" name="password">
+                                <input  wire:model.defer="form.password"  id="password" type="password" placeholder="Password" class="form-control bg-light @error('password') is-invalid @enderror" name="password">
                                 @error('password')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                             </div>
 
@@ -41,13 +41,14 @@
                                 </button>
                             </div>  
                             <div class="text-center">
-                              <p>Already a member? <a href="{{ route('login') }}" class="text-decoration-none fw-semibold">Sign In</a></p>
-                              <hr>
-                              <p class="small">By signing up you agree to {{ config('app.name') }}'s <br>Terms of Service and Privacy Policy.</p>
+                              <div class="small">By signing up you agree to {{ config('app.name') }}'s <br>Terms of Service and Privacy Policy.</div>
                             </div>
                         </form>
                     </main>
-                </div>    
+                </div> 
+                <div class="border-top py-4 d-flex justify-content-center align-items-center">
+                    <div>Already have an account? <a href="#modalLogin" class="text-decoration-none fw-semibold" data-bs-toggle="modal">Log in</a></div>
+                </div>   
             </div>
         </div>
     </div>

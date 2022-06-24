@@ -9210,8 +9210,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.menu .nav-link {
-  color: #1cb35d !important;
+.shadow-tiny {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .search .form-control {
@@ -9232,6 +9232,10 @@ textarea.form-control-lg {
 .btn-login:hover {
   background: #f8f9fa !important;
   border-color: transparent !important;
+}
+
+.mobile-menu .nav-item {
+  border-bottom: 1px solid #e9ecef;
 }
 
 .footer-container {
@@ -9285,4 +9289,61 @@ textarea.form-control-lg {
 .form-control:focus {
   box-shadow: none;
   border-color: #b0ce34;
+}
+
+:root {
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+
+.animate__animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-duration: var(--animate-duration);
+  animation-duration: var(--animate-duration);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate__animated[class*=Out] {
+  opacity: 0;
+}
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate__animated.animate__faster {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: calc(var(--animate-duration) / 2);
+  animation-duration: calc(var(--animate-duration) / 2);
+}
+
+.animate__animated.animate__fast {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-duration: calc(var(--animate-duration) * 0.8);
+  animation-duration: calc(var(--animate-duration) * 0.8);
+}
+
+.animate__zoomIn {
+  -webkit-animation-name: zoomIn;
+          animation-name: zoomIn;
 }

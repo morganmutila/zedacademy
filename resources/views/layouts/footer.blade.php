@@ -32,8 +32,8 @@
         </div>
     </div>
         
-	<div class="footer-bottom">	
-		<div class="container pb-3 pt-1 py-md-4">
+	<div class="footer-bottom pb-4 pb-md-1">	
+		<div class="container py-3 py-md-4">
             <div class="small text-center text-md-start">© {{  date('Y', time())  }} {{ config('app.name') }}. All rights reserved. Trademark of Mostek Ltd.</div>
         </div>
 	</div>

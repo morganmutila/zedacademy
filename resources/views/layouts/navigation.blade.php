@@ -1,7 +1,7 @@
-<header class="navbar navbar-expand-lg navbar-light bg-white align-items-stretch border-bottom p-0" style="height: 60px">
+<header class="navbar navbar-expand-lg navbar-light bg-white align-items-stretch shadow-tiny p-0" style="height: 60px">
     <nav class="container-fluid flex-wrap flex-md-nowrap justify-content-between px-md-5 align-items-md-stretch" role="navigation">
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navBarMobile">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#navBarMobile">
+            <x-menu-icon/>
         </button>
 
         <!--Desktop device logo--->
@@ -15,10 +15,10 @@
         </a>
 
         @if(Auth::check())
-            <a href="{{ route('profile.edit') }}" class="me-2">
+            <a href="{{ route('profile.edit') }}" class="me-2 d-md-none">
             <img src="https://i.pravatar.cc/32?u={{ Auth::user()->id }}" height="35px" width="35px"/ alt="{{ Auth::user()->name }}" class="rounded-circle"></a>
         @else
-            <a class="d-md-none btn btn-outline-primary" href="{{ route('login') }}">Sign in</a>
+            <a class="d-md-none btn btn-outline-primary fw-semibold" href="{{ route('login') }}">Sign in</a>
 
         @endif
 
@@ -97,7 +97,7 @@
             <li class="d-none d-md-flex nav-item flex-grow-1 ms-md-3">
                 <div class="search d-flex flex-row position-relative" style="max-width:300px;width:60%;">
                     <div class="search-icon d-inline-flex align-items-center pe-2 position-absolute text-muted"><x-search-icon/></div>
-                    <input type="text" class="form-control ps-5 py-2 text-bg-light" placeholder="What do you want to learn?">
+                    <input type="text" class="form-control rounded-pill ps-5 py-2 text-bg-light" placeholder="What do you want to learn?">
                 </div>                         
             </li>
  
@@ -139,12 +139,15 @@
         </ul>
 
         <!--Menu for mobile devices-->
-        <div class="d-md-none offcanvas offcanvas-start flex-grow-1" data-bs-scroll="true" id="navBarMobile">
-            <div class="offcanvas-header align-self-end">
+        <div class="d-md-none offcanvas offcanvas-start flex-grow-1" data-bs-scroll="true" id="navBarMobile" >
+            <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#navBarMobile"></button>
             </div>
-            <div class="offcanvas-body p-5 pt-0 p-md-0 align-items-center">
-                <ul class="menu navbar-nav fs-3">
+            <div class="offcanvas-body align-items-center">
+                <ul class="menu mobile-menu navbar-nav fs-5 fw-semibold">
+                    <li class="nav-item">
+                        <a class="nav-link link-dark" href="{{ route('home') }}">Home</a>   
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link link-dark" href="{{ route('browse') }}">Browse</a>   
                     </li>
@@ -166,7 +169,7 @@
                         <li>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                 @csrf
-                                <button type="submit" class="btn btn-link fs-3 link-dark text-decoration-none p-0">Sign Out</button>
+                                <button type="submit" class="btn btn-link fs-5 fw-semibold link-dark text-decoration-none p-0">Sign Out</button>
                             </form>
                         </li>
                     @endauth

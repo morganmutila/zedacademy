@@ -6,7 +6,7 @@
 			<div class="col-md-6 col-12 text-center text-md-start">
 				<h1 class="fw-bold text-dark fs-1">Zambia's most creative online education platform</h1>
 				<p class="my-3 h5 text-secondary d-none d-md-block">The online learning platform based on the Zambian secondary school syllabus.</p>
-				<button type="button" class="btn btn-primary text-white fw-bold d-none d-md-inline-block mt-3 fs-5 px-md-4 py-md-2" data-bs-toggle="modal" data-bs-target="#modalLogin">Get started</button>
+				<button type="button" class="btn btn-primary text-white fw-bold d-none d-md-inline-block mt-3 fs-5 px-md-4 py-md-2" data-bs-toggle="modal" data-bs-target="#modalSignUp">Get started</button>
 				<a href="{{ route('register') }}" class="btn btn-primary d-md-none text-white mt-3">Get started</a>
 			</div>
 			<div class="col-md-6 d-md-block d-none">
@@ -21,7 +21,7 @@
 		<div class="d-flex justify-content-between align-items-center">
 			<div class="dropdown">
 			  	<button class="btn btn-white border dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-			    <span class="text-dark">Dropdown button</span>
+			    <span class="text-dark">Dropdown</span>
 			  	</button>
 			  	<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
 			    	<li><a class="dropdown-item" href="#">Action</a></li>
@@ -43,7 +43,7 @@
 		@forelse($shots as $shot)
 			<x-shot-panel :shot="$shot"/>
 		@empty
-			<p class="lead">There are courses yet</p>
+			<p class="lead">There are no courses yet</p>
 		@endforelse
 	</section>
 </main>
