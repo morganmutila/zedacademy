@@ -5,7 +5,7 @@
     <div class="container" style="margin-bottom: 80px;">
         <div class="d-flex align-items-center px-md-5 justify-content-center">
 
-            <main class="col-md-5 col-12 d-flex align-items-center justify-content-center flex-column px-md-4"> 
+            <main class="col-md-6 col-12 d-flex align-items-center justify-content-center flex-column px-md-4"> 
 
                 <a href="{{ url()->previous() }}" class="d-md-none fw-bold text-dark text-decoration-none align-self-start btn btn-link mb-4 ms-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -30,7 +30,7 @@
                     <div class="mb-4">
                         <div class="d-flex align-items-center">
                             <input class="form-check-input m-0" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} style="width: 1.2rem;height: 1.2rem;">
-                            <label class="form-check-label text-dark ms-2 small" for="remember">Keep me logged in until I log out
+                            <label class="form-check-label text-dark ms-2 small" for="remember">Keep me logged in until I logout
                             </label>
                         </div>
                     </div>

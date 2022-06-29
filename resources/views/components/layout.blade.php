@@ -16,7 +16,7 @@
         <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
-<body>
+<body  {{ $attributes->merge(['class' => '']) }}>
 
     @includeUnless(request()->routeIs(['login', 'register', 'password.request']), 'layouts.navigation')
 

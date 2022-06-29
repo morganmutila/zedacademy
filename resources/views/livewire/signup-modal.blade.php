@@ -1,6 +1,6 @@
 <div>
     <!-- Modal -->
-    <div wire:ignore.self class="modal modal animate__animated animate__fast   animate__zoomIn" id="modalSignUp" data-bs-backdrop="static" tabindex="-1">
+    <div wire:ignore.self class="modal modal fade" id="modalSignUp" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" style="width: 430px;">
             <div class="modal-content rounded">
                 <div class="modal-body d-flex flex-column">
@@ -31,7 +31,7 @@
 
                             <div class="mb-3 position-relative">
                                 <span class="position-absolute fw-bold small text-accent togglePassword" style="right: 4%; top: 20%;cursor: pointer;">Show</span>
-                                <input  wire:model.defer="form.password"  id="password" type="password" placeholder="Password" class="form-control bg-light @error('password') is-invalid @enderror" name="password">
+                                <input  wire:model.defer="form.password"  id="password" type="password" placeholder="Create Password" class="form-control bg-light @error('password') is-invalid @enderror" name="password">
                                 @error('password')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                             </div>
 
@@ -41,8 +41,7 @@
                                 </button>
                             </div>  
                             <div class="text-center">
-                              <div class="small">By signing up you agree to {{ config('app.name') }}'s <br>Terms of Service and Privacy Policy.</div>
-                            </div>
+                               <p class="small text-muted">By continuing, you agree to {{ config('app.name') }}'s <br><a href="#" class="text-dark text-decoration-none">Terms of Service</a> and <a href="#" class="text-dark text-decoration-none">Privacy Policy.</a></p>
                         </form>
                     </main>
                 </div> 

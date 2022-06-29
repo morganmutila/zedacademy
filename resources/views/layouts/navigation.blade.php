@@ -25,7 +25,7 @@
         <!--Menu for desktop devices-->
         <ul class="menu navbar-nav flex-row-md flex-wrap align-items-center flex-grow-1 ms-md-5 d-none d-md-flex">
             <li class="nav-item dropdown">
-                <a class="link-dark nav-link p-2 fw-semibold my-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                <a class="link-dark nav-link p-2 my-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                     Browse <x-chevron-down/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-start border-0 p-0 rounded-md shadow-lg" style="min-width: 20rem";>
@@ -80,6 +80,11 @@
                                     </div>
                                 </div>        
                             </a>
+                            <a class="dropdown-item rounded-left text-primary" href="{{ route('browse') }}">
+                                <div class="py-2 d-flex align-items-center">
+                                    <h6 class="text-dark">All subjects</h6>
+                                </div>
+                            </a>
                         </div>    
                         {{-- <div class="d-md-flex flex-col flex-wrap bg-light p-4">
                             <a class="w-100 text-decoration-none text-black fw-semibold small" href="/shots/popular/animation">Animation</a>
@@ -104,7 +109,7 @@
             @guest
 
                 <li class="nav-item mx-3">
-                    <a class="btn-login link-dark nav-link p-2 px-3 rounded " href="{{ route('login') }}">Sign in</a>
+                    <a class="btn-login link-dark nav-link p-2 px-3 rounded " href="{{ route('login') }}">Log in</a>
                 </li>
 
                 <li class="nav-item">
@@ -121,19 +126,19 @@
                         <span class="ms-2">{{ Auth::user()->name }}</span>
                      </a>
 
-                    <ul class="dropdown-menu dropdown-menu-end py-4 text-start rounded shadow-lg border">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="/account/profile">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Edit Work Preferences</a></li>
-                        <li><a class="dropdown-item" href="#">My Boosted Shots</a></li>
-                        <li><a class="dropdown-item" href="#">My Likes</a></li>
-                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
-                        <li><form class="dropdown-item" id="logout-form" action="{{ route('logout') }}" method="POST">
+                    <div class="dropdown-menu dropdown-menu-end small text-start rounded shadow-lg border">
+                        <a class="dropdown-item small" href="#">Profile</a>
+                        <a class="dropdown-item small" href="/account/profile">Edit Profile</a>
+                        <a class="dropdown-item small" href="#">Edit Work Preferences</a>
+                        <a class="dropdown-item small" href="#">My Boosted Shots</a>
+                        <a class="dropdown-item small" href="#">My Likes</a>
+                        <a class="dropdown-item small" href="#">Account Settings</a>
+                        <hr class="dropdown-divider">
+                        <form class="w-100 px-3" id="logout-form" action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit" class="btn btn-link text-dark text-decoration-none p-0">Sign Out</button>
-                            </form>
-                        </li>                
-                    </ul>
+                            <button type="submit" class="btn btn-link btn-sm link-danger text-decoration-none p-0">Sign Out</button>
+                        </form>               
+                    </div>
                 </li>
              @endauth
         </ul>

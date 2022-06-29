@@ -1,6 +1,6 @@
 <div>
     <!-- Modal -->
-    <div wire:ignore.self class="modal animate__animated animate__fast animate__zoomIn" id="modalLogin" data-bs-backdrop="static" tabindex="-1">
+    <div wire:ignore.self class="modal fade" id="modalLogin" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered" style="width: 430px;">
             <div class="modal-content rounded">
                 <div class="modal-body d-flex flex-column">

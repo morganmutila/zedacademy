@@ -15,7 +15,7 @@
                 @endif
 
                 <h1 class="fw-bold mt-5 mb-4">Password Reset</h1> 
-                <p class="mb-4 text-dark text-center" style="font-family:helvetica;">Enter your <strong>Zedacademy username</strong>, or the <strong>email address</strong>. We'll send you an email with your username and a link to reset your password.</p>
+                <p class="mb-4 text-dark text-center">Enter your <strong>Zedacademy username</strong>, or the <strong>email address</strong>. We'll send you an email with your username and a link to reset your password.</p>
 
                 <form method="POST" action="{{ route('password.email') }}" class="px-md-5 px-3 w-100">
                     @csrf

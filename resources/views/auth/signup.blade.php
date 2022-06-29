@@ -5,7 +5,7 @@
     <div class="container" style="margin-bottom: 80px;">
         <div class="d-flex align-items-center px-md-5 justify-content-center">
 
-            <main class="col-md-5 col-12 d-flex align-items-center justify-content-center flex-column px-md-4"> 
+            <main class="col-md-6 col-12 d-flex align-items-center bg-white justify-content-center flex-column px-md-4"> 
                 <a href="{{ url()->previous() }}" class="d-md-none fw-bold text-dark text-decoration-none align-self-start btn btn-link mb-4 ms-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
@@ -33,11 +33,11 @@
 
                     <div class="mb-3 position-relative">
                         <span class="position-absolute fw-bold small text-accent togglePassword" style="right: 4%; top: 20%;cursor: pointer;">Show</span>
-                        <input id="password" type="password" placeholder="Password" class="form-control bg-light rounded @error('password') is-invalid @enderror" name="password">
+                        <input id="password" type="password" placeholder="Create Password" class="form-control bg-light rounded @error('password') is-invalid @enderror" name="password">
                         @error('password')<div class="invalid-feedback small">{{ $message }}</div>@enderror
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-4">
                         <button type="submit" class="btn btn-primary text-white w-100 px-5 fw-bold py-2">
                             Sign up
                         </button>
@@ -49,7 +49,7 @@
                         </svg>&nbsp;Go back</a> 
                     </div>
                     <div class="text-center">
-                        <p class="small muted">By continuing, you agree to {{ config('app.name') }}'s <br>Terms of Service and Privacy Policy.</p>
+                        <p class="small text-muted">By continuing, you agree to {{ config('app.name') }}'s <br><a href="#" class="text-dark text-decoration-none">Terms of Service</a> and <a href="#" class="text-dark text-decoration-none">Privacy Policy.</a></p>
                     </div>
                 </form>
             </main>   

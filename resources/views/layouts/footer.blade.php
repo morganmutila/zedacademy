@@ -1,9 +1,9 @@
 <footer class="footer-container mt-5 text-bg-light">
 	<div class="container">
 		<div class="row pb-md-5">
-			<div class="col-md-4 mb-3 d-none d-md-block">
+			<div class="col-md-6 mb-3 d-none d-md-block">
 				<x-logo-alt-w/>
-				<p class="mt-3 fs-8 w-75">The online education platform based on the Zambian school syllabus.</p>
+				<p class="mt-3 fs-8 w-75">The online education platform based<br> on the Zambian school syllabus.</p>
 			</div>
              <div class="col-6 col-md-2 mb-3 footer-column">
                 <div class="footer-heading">Company</div>
@@ -34,7 +34,10 @@
         
 	<div class="footer-bottom pb-4 pb-md-1">	
 		<div class="container py-3 py-md-4">
-            <div class="small text-center text-md-start">© {{  date('Y', time())  }} {{ config('app.name') }}. All rights reserved. Trademark of Mostek Ltd.</div>
+            <div class="small text-center text-md-start">© {{  date('Y', time())  }} {{ config('app.name') }}. All rights reserved. Trademark of Mostek LLC.</div>
+            <div class="text-center py-2 d-none">
+                <x-logoc height="100px" width="100px"/>
+            </div>
         </div>
 	</div>
 </footer>
